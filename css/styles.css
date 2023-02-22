@@ -263,15 +263,15 @@ body {
   border: 1px solid rgba(0, 0, 0, 0.1);
   margin-left: auto;
   padding: 0;
+  transition-property: background-color, fill;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 250ms;
 }
 
 .modal-close:is(:hover, :focus) {
   background-color: var(--active-states-color);
   fill: #fff;
-  transition-property: background-color, fill;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 250ms;
-}
+  }
 
 .features-section {
   padding-top: 120px;
@@ -469,7 +469,7 @@ body {
   border: 1px solid var(--light-slate);
   border-radius: 4px;
   color: var(--light-slate);
-  transition-property: color;
+  transition-property: color, fill;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition: 250ms;
 }
