@@ -45,6 +45,10 @@ img {
 }
 
 body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
   font-family: "Roboto", sans-serif;
   font-size: 16px;
   color: var(--primary-text-color);
@@ -54,8 +58,6 @@ body {
 
 .link {
   text-decoration: none;
-  color: inherit;
-  transition: 0.3s;
 }
 
 .visually-hidden {
@@ -155,13 +157,19 @@ body {
 
 .nav-link:hover,
 .nav-link:focus,
-.nav-link.current {
+.nav-link.active {
   color: var(--pressed-state-color);
+  transition-property: color;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 250ms;
 }
 
 .address-link:hover,
 .address-link:focus {
   color: var(--pressed-state-color);
+  transition-property: color;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 250ms;
 }
 
 .address-link {
@@ -215,6 +223,9 @@ body {
 .hero-button:focus {
   background: var(--pressed-state-color);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  transition-property: background-color, box-shadow;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 250ms;
 }
 
 .backdrop {
@@ -223,6 +234,8 @@ body {
   width: 100%;
   height: 100%;
   background-color: rgba(46, 47, 66, 0.4);
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 250ms;
 }
 
 .modal {
@@ -249,11 +262,15 @@ body {
   background: var(--footer-text-color);
   border: 1px solid rgba(0, 0, 0, 0.1);
   margin-left: auto;
+  padding: 0;
 }
 
 .modal-close:hover {
   background-color: var(--active-states-color);
   fill: #fff;
+  transition-property: fill;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 250ms;
 }
 
 .features-section {
@@ -399,6 +416,9 @@ body {
 
 .team-soc-link:is(:hover, :focus) {
   background-color: var(--pressed-state-color);
+  transition-property: background-color;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 250ms;
 }
 
 .team-soc-icon {
@@ -434,10 +454,16 @@ body {
 
 .customers-client-link:is(:hover, :focus) {
   border-color: var(--pressed-state-color);
+  transition-property: border;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition: 250ms;
 }
 
 .customers-client-link:is(:hover, :focus) .customers-client-icon {
   fill: var(--pressed-state-color);
+  transition-property: fill;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition: 250ms;
 }
 
 .customers-client-link {
@@ -477,6 +503,31 @@ body {
   gap: 48px 24px;
 }
 
+.filter-button:hover,
+.filter-button:focus {
+  color: #fff;
+  background-color: var(--pressed-state-color);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
+  border: solid 1px var(--pressed-state-color);
+  transition-property: background-color, border;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 250ms;
+}
+
+.filter-button {
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: var(--active-states-color);
+  background: var(--light-mode-bg);
+  border: 1px solid #e7e9fc;
+  border-radius: 4px;
+  padding: 12px 24px;
+}
+
 .filter-list {
   display: flex;
   flex-wrap: wrap;
@@ -489,7 +540,7 @@ body {
   width: calc((100% - 48px) / 3);
 }
 
-.filter-list-item:hover .filter-cover-text {
+.filter-list-link:hover .filter-cover-text {
   transform: translateY(0);
 }
 
@@ -501,8 +552,12 @@ body {
 .filter-list-link:hover,
 .filter-list-link:focus {
   display: block;
+  transform: translateY(0);
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+  transition-property: box-shadow;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 250ms;
 }
 
 .filter-cover-text {
@@ -529,28 +584,6 @@ body {
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: var(--primary-text-color);
-}
-
-.filter-button:hover,
-.filter-button:focus {
-  color: #fff;
-  background: var(--pressed-state-color);
-  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08),
-    0px 2px 2px rgba(0, 0, 0, 0.12);
-  border: solid 1px var(--pressed-state-color);
-}
-
-.filter-button {
-  font-family: inherit;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 1.5;
-  letter-spacing: 0.04em;
-  color: var(--active-states-color);
-  background: var(--light-mode-bg);
-  border: 1px solid #e7e9fc;
-  border-radius: 4px;
-  padding: 12px 24px;
 }
 
 .footer {
@@ -591,6 +624,10 @@ body {
   margin-top: 16px;
 }
 
+.footer-soc-section {
+  margin-right: 80px;
+}
+
 .footer-soc-text {
   font-weight: 500;
   font-size: 16px;
@@ -612,7 +649,10 @@ body {
 
 .footer-soc-link:hover,
 .footer-soc-link:focus {
-  background: var(--footer--item-pressed);
+  background-color: var(--footer--item-pressed);
+  transition-property: background-color;
+  transition: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 250ms;
 }
 
 .footer-soc-link {
@@ -627,6 +667,55 @@ body {
 
 .footer-soc-icon {
   fill: #fff;
+}
+
+.footer-subscribe {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: #ffffff;
+  margin-bottom: 16px;
+}
+.footer-email {
+  width: 264px;
+  height: 40px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.2;
+  letter-spacing: 0.04em;
+  background-color: var(--primary-bg-color);
+  color: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+  border-radius: 4px;
+  padding-left: 16px;
+  margin-right: 24px;
+}
+
+.footer-subscribe-btn {
+  padding-top: 40px;
+}
+
+.subscribe-btn {
+  width: 165px;
+  height: 40px;
+  background: var(--active-states-color);
+  border-radius: 4px;
+  border: 1px solid var(--active-states-color);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.2;
+  letter-spacing: 0.04em;
+  color: #ffffff;
+}
+
+.subscribe-btn:is(:hover, :focus) {
+  background-color: var(--pressed-state-color);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  transition-property: background-color;
+  transition: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 250ms;
 }
 
 .is-hidden {
