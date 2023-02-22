@@ -221,7 +221,7 @@ body {
 
 .hero-button:hover,
 .hero-button:focus {
-  background: var(--pressed-state-color);
+  background-color: var(--pressed-state-color);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   transition-property: background-color, box-shadow;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -265,10 +265,10 @@ body {
   padding: 0;
 }
 
-.modal-close:hover {
+.modal-close:is(:hover, :focus) {
   background-color: var(--active-states-color);
   fill: #fff;
-  transition-property: fill;
+  transition-property: background-color, fill;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 250ms;
 }
@@ -454,7 +454,7 @@ body {
 
 .customers-client-link:is(:hover, :focus) {
   border-color: var(--pressed-state-color);
-  transition-property: border;
+  transition-property: border-color;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition: 250ms;
 }
@@ -510,7 +510,7 @@ body {
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
   border: solid 1px var(--pressed-state-color);
-  transition-property: background-color, border;
+  transition-property: color, background-color, border-color;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 250ms;
 }
@@ -540,7 +540,7 @@ body {
   width: calc((100% - 48px) / 3);
 }
 
-.filter-list-link:hover .filter-cover-text {
+.filter-list-link:is(:hover, :focus) .filter-cover-text {
   transform: translateY(0);
 }
 
@@ -713,7 +713,7 @@ body {
 .subscribe-btn:is(:hover, :focus) {
   background-color: var(--pressed-state-color);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-  transition-property: background-color;
+  transition-property: background-color, box-shadow;
   transition: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 250ms;
 }
