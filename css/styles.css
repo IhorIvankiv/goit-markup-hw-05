@@ -520,7 +520,7 @@ body {
   border: 1px solid #e7e9fc;
   border-radius: 4px;
   padding: 12px 24px;
-  transition-property: color, box-shadow, background-color, border;
+  transition-property: box-shadow, background-color, border;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 250ms;
 }
@@ -530,6 +530,7 @@ body {
   flex-wrap: wrap;
   gap: 48px 24px;
 }
+
 
 .filter-list-item {
   position: relative;
@@ -544,6 +545,12 @@ body {
 .filter-cover-wrap {
   position: relative;
   overflow: hidden;
+}
+
+.filter-list-link {
+  transition-property: box-shadow;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 250ms;
 }
 
 .filter-list-link:hover,
@@ -573,7 +580,7 @@ body {
   height: 100%;
   transform: translateY(100%);
   transition-property: color;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 250ms;
 }
 
@@ -700,24 +707,32 @@ body {
 }
 
 .subscribe-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 165px;
   height: 40px;
   background: var(--active-states-color);
   border-radius: 4px;
   border: 1px solid var(--active-states-color);
+  transition-property: background-color, box-shadow, border;
+  transition: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 250ms;
   font-weight: 500;
   font-size: 16px;
   line-height: 1.2;
   letter-spacing: 0.04em;
   color: #ffffff;
+  gap: 16px;
 }
 
 .subscribe-btn:is(:hover, :focus) {
   background-color: var(--pressed-state-color);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-  transition-property: background-color, box-shadow;
-  transition: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 250ms;
+}
+
+.subscribe-btn-icon {
+  fill: #fff;
 }
 
 .is-hidden {
